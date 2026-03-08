@@ -1,0 +1,15 @@
+# Core ML / numerical
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.2
+matplotlib>=3.6
+pandas>=1.5
+
+# API (optional – falls back to stdlib http.server if not available)
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+pydantic>=2.0
+
+# Optional: better sentence embeddings (requires network access)
+# sentence-transformers>=2.2
+# chromadb>=0.4

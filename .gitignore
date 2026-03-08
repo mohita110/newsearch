@@ -1,0 +1,12 @@
+node_modules/
+20_newsgroups/
+venv/
+.venv/
+__pycache__/
+*.log
+*.tmp
+build/
+dist/
+dataset/
+datasets/
+.cache/

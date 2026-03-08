@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  newsearch:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount pre-built embeddings to avoid re-running pipeline on every start
+      - ./embeddings:/app/embeddings
+      - ./cache:/app/cache
+      - ./analysis:/app/analysis
+    environment:
+      - CACHE_THRESHOLD=0.88
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
